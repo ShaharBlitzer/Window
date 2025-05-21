@@ -1,0 +1,16 @@
+[2025-05-21T20:45:12.689Z] TypeError: EndpointManager.clearEndpoints is not a function
+[2025-05-21T20:46:01.149Z] TypeError: EndpointManager.clearEndpoints is not a function
+[2025-05-21T20:50:40.022Z] TypeError: EndpointManager.clearEndpoints is not a function
+[2025-05-21T20:53:57.664Z] TypeError: EndpointManager.clearEndpoints is not a function
+[2025-05-21T20:54:02.614Z] ReferenceError: con is not defined
+[2025-05-21T20:54:23.204Z] ReferenceError: con is not defined
+[2025-05-21T20:54:25.486Z] ReferenceError: con is not defined
+[2025-05-21T20:54:27.926Z] TypeError: EndpointManager.clearEndpoints is not a function
+[2025-05-21T20:54:33.372Z] ReferenceError: con is not defined
+[2025-05-21T20:54:37.026Z] TypeError: EndpointManager.clearEndpoints is not a function
+[2025-05-21T20:55:07.437Z] TypeError: EndpointManager.clearEndpoints is not a function
+[2025-05-21T21:09:05.284Z] ReferenceError: updatedState is not defined
+[2025-05-21T21:09:05.342Z] ReferenceError: updatedState is not defined
+[2025-05-21T21:09:05.393Z] ReferenceError: updatedState is not defined
+[2025-05-21T21:09:05.445Z] ReferenceError: updatedState is not defined
+[2025-05-21T21:09:05.499Z] ReferenceError: updatedState is not defined

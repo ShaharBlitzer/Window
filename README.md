@@ -48,7 +48,7 @@ backend/
 ├── routes/            # API route handlers
 ├── services/          # Business logic and utilities
 ├── utils/             # Helper functions
-├── data/              # Persistent storage (endpoints.json)
+├── data/              # Persistent storage (endpoints.json, maliciousList.json )
 ├── Dockerfile         # Docker configuration for backend
 ```
 

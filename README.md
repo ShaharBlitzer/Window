@@ -103,12 +103,6 @@ frontend/
 - **Stateless API**: The backend adheres to RESTful principles, making it stateless and scalable.
 - **Containerization**: Docker is used for both the backend and frontend to simplify deployment and maintain consistency.
 
-### Design Considerations
-
-- Modular and reusable code.
-- Clear separation of concerns between backend services and frontend UI.
-
----
 
 ## Inputs and Assumptions
 
@@ -136,6 +130,7 @@ frontend/
 
 ## Additional Notes
 
+- Originally, I planned to implement endpoint storage using an in-memory data structure. However, due to process isolation in Node.js and the reference-based behavior of JavaScript objects, sharing data structures between processes proved to be impractical. As a workaround, I utilized a JSON file as a shared memory solution. While functional, this approach incurs performance costs because of frequent file I/O operations. Looking ahead, I aim to explore more efficient alternatives, such as leveraging frameworks or tools that enable shared data structures across threads—like SharedArrayBuffer and Atomics—or implementing message channels to minimize reliance on file-based operations.
 
 
 #### Backend Requires:

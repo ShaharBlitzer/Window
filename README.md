@@ -127,15 +127,16 @@ frontend/
 
 ### Assumptions
 
-- File hashes provided are unique strings.
-- The backend has access to an up-to-date list of malicious hashes.
-- The JSON file (`endpoints.json`) used for persistence is pre-initialized and accessible.
+- File hashes provided are unique strings (no two strings can be identical to each other).
+-  An error will not halt the application; instead, all errors will be logged in the `error.log` file.
+- The response for `check-files` requests is a list containing the malicious files detected.
+- The state of an endpoint will be marked as `invalid` if the current time exceeds `nextCall + EXPIRED_TIME`
 
 ---
 
 ## Additional Notes
 
-### Dependencies
+
 
 #### Backend Requires:
 - Node.js

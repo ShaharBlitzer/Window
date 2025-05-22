@@ -126,6 +126,7 @@ frontend/
 -  An error will not halt the application; instead, all errors will be logged in the `error.log` file.
 - The response for `check-files` requests is a list containing the malicious files detected.
 - The state of an endpoint will be marked as `invalid` if the current time exceeds `nextCall + EXPIRED_TIME`
+- If a request is received and the UUID already exists (indicating this is not the first call), and the `lastCall` parameter in the new request is earlier than the existing `nextCall`, it will be treated as an irrelevant request. Consequently, the storage and UI will not be updated with the new endpoint request parameters.
 
 ---
 

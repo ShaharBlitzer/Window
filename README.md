@@ -1,8 +1,17 @@
 # Project Documentation
 
+## Goal
+
+The system is designed to allow users to view the current state of all endpoints and the number of malicious files detected.
+
 ## Overview
 
-This project consists of a backend service and a frontend application designed to manage and analyze endpoint data in real-time. The system uses Docker for containerized deployment and is built with Node.js for the backend and React for the frontend.
+The environment consists of:
+
+- **Backend Service**: Responsible for managing the state of endpoints, processing file hash checks, and providing services to both endpoints and users.
+- **Frontend Application**: Offers a user-friendly interface to display and manage the endpoint data.
+
+- This project consists of a backend service and a frontend application designed to manage and analyze endpoint data in real-time. The system uses Docker for containerized deployment and is built with Node.js for the backend and React for the frontend.
 
 ---
 
@@ -13,7 +22,8 @@ This project consists of a backend service and a frontend application designed t
 The backend is implemented in Node.js and handles the business logic for:
 
 - **Managing endpoint data.**
-- **Processing incoming requests** to check file hashes against a list of malicious hashes.
+- **Processing incoming requests** to check file hashes against a list of malicious hashes using Rest/API.
+- **Provide Relevant Data to the Frontend**.
 - **Persisting data** to a JSON file for durability.
 
 ### Features
@@ -132,11 +142,39 @@ frontend/
 
 ## Additional Notes
 
-- Originally, I planned to implement endpoint storage using an in-memory data structure. However, due to process isolation in Node.js and the reference-based behavior of JavaScript objects, sharing data structures between processes proved to be impractical. As a workaround, I utilized a JSON file as a shared memory solution. While functional, this approach incurs performance costs because of frequent file I/O operations. Looking ahead, I aim to explore more efficient alternatives, such as leveraging frameworks or tools that enable shared data structures across threads—like SharedArrayBuffer and Atomics—or implementing message channels to minimize reliance on file-based operations.
+### Endpoint Storage
+#### What’s Done:
+- Implemented endpoint storage using a JSON file as shared memory. This decision was based on the limitations of Node.js concerning in-memory data structures and inter-process sharing.
 
-- State Update Mechanism
-The current state update mechanism relies on frontend requests, which is not considered best practice. In the future, I plan to implement an optimized mechanism to manage state updates more effectively.This would involve maintaining a variable that tracks the closest nextCall timestamp. When a request is received, the system would check whether the nextCall date in the request is earlier than the currently tracked closest timestamp. If so, the system would update the variable accordingly and schedule an event to update the state at the new nextCall time. Additionally, any previously pending events that are no longer relevant would be canceled to avoid unnecessary processing.
+#### What Needs to Be Done:
+- Explore and implement efficient alternatives for endpoint storage:
+  - **SharedArrayBuffer** and **Atomics** for thread-safe shared memory.
+  - **Message channels** to reduce reliance on file-based operations and improve performance.
 
+### State Update Mechanism
+#### What’s Done:
+- Currently relies on frontend requests to update the state, enabling basic functionality.
+
+#### What Needs to Be Done:
+- Implement an optimized mechanism for state updates:
+  - Maintain a variable to track the closest `nextCall` timestamp.
+  - Update the variable when a request contains an earlier `nextCall` timestamp.
+  - Schedule events to update the state at the appropriate time and cancel irrelevant pending events to avoid unnecessary processing.
+
+---
+
+## Updated Phases Table
+
+| Phase      | Component | Feature                                       | Status   |
+|------------|-----------|-----------------------------------------------|----------|
+| Phase #1   | Backend   | Endpoint object and basic methods            | Done     |
+| Phase #1   | Backend   | Data persistence                             | Done     |
+| Phase #1   | Backend   | Multitasking using a thread pool with locking mechanism | Done |
+| Phase #2   | Backend   | Optimized state update mechanism             | Planned  |
+| Phase #2   | Backend   | Explore and implement efficient endpoint storage alternatives | Planned  |
+| Phase #2   | Frontend  | Improved UI design                           | Planned  |
+
+---
 ### Testing
 - The project includes a `testApi.js` file for testing the `/api/check-files` endpoint. This script sends various requests to validate the API's functionality and logs the results.
 - 

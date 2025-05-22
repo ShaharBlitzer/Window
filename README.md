@@ -29,7 +29,6 @@ The backend is implemented in Node.js and handles the business logic for:
   - `api/check-files`: Endpoint for submitting file hash checks.
   - `/show-endpoints`: Endpoint for retrieving all endpoints. This endpoint is primarily used by the frontend to fetch and update endpoint data, including state changes.
 
-- **Dockerized Deployment**: Simplifies setup and ensures consistent environments.
 
 ### Directory Structure
 
@@ -68,9 +67,11 @@ The frontend provides a user interface for interacting with the backend services
 
 ### Features
 
-- **Dynamic UI**: design for managing endpoints.
+- **Dynamic UI**: Modern, responsive design for managing endpoints.
+- **Refresh Button**: A refresh button allows users to manually call the `/show-endpoints` endpoint on the backend and refresh the displayed endpoint data.
+- **Proactive Updates**: Every 20 minutes, the frontend automatically calls the `/show-endpoints` endpoint to ensure the displayed data is up-to-date.
 - **Integration with Backend**: Seamlessly communicates with the backend API to fetch and display data.
-- **Dockerized Deployment**: Ensures easy setup and consistent environment.
+
 
 ### Directory Structure
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project consists of a backend service and a frontend application designed to manage and analyze endpoint data in real-time. The system uses Docker for containerized deployment and is built with Node.js for the backend and a modern JavaScript framework for the frontend.
+This project consists of a backend service and a frontend application designed to manage and analyze endpoint data in real-time. The system uses Docker for containerized deployment and is built with Node.js for the backend and React for the frontend.
 
 ---
 

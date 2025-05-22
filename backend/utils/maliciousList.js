@@ -29,4 +29,4 @@ async function updateMaliciousList(newHashes) {
   }
 }
 
-module.exports = getMaliciousList;
+module.exports = {getMaliciousList, updateMaliciousList};

@@ -2,6 +2,7 @@
     const { handleFileCheck } = require('../services/workerService');
     const updateEndpointStates = require('../services/refreshEndpoints');
     const { logError } = require('../utils/logError');
+    const { updateMaliciousList } = require('../utils/maliciousList');
     const router = express.Router();
 
     // POST endpoint for file checks
@@ -26,6 +27,19 @@
     router.get('/show-endpoints', async (req, res) => {
         try{
             const result = await updateEndpointStates()
+            res.status(200).send(result);
+            
+        }catch (error) {
+                console.error('Error:', error);
+                await logError(error);
+                // res.status(500).send({ error: 'Internal Server Error' });
+            }
+    })
+
+    router.post('/update-list', async (req, res) => {
+        try{
+            const {maliciousList} = req.body
+            const result = await updateMaliciousList(maliciousList)
             res.status(200).send(result);
             
         }catch (error) {

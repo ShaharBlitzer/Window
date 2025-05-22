@@ -1,6 +1,6 @@
     const { Worker } = require('worker_threads');
     const path = require('path');
-    const getMaliciousList = require('../utils/maliciousList');
+    const {getMaliciousList} = require('../utils/maliciousList');
 
 
     async function handleFileCheck(uuid, fileHashes, nextCall) {

@@ -38,7 +38,7 @@ The backend is implemented in Node.js and handles the business logic for:
 - **REST API**:
   - `api/check-files`: Endpoint for submitting file hash checks.
   - `/show-endpoints`: Endpoint for retrieving all endpoints. This endpoint is primarily used by the frontend to fetch and update endpoint data, including state changes.
-
+  - `/update-list`: Endpoint for updating the `maliciousList.json` file, which contains the list of known malicious hashes. The input should be a list of malicious hashes to update the existing list.
 
 ### Directory Structure
 

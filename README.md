@@ -132,14 +132,9 @@ frontend/
 
 - Originally, I planned to implement endpoint storage using an in-memory data structure. However, due to process isolation in Node.js and the reference-based behavior of JavaScript objects, sharing data structures between processes proved to be impractical. As a workaround, I utilized a JSON file as a shared memory solution. While functional, this approach incurs performance costs because of frequent file I/O operations. Looking ahead, I aim to explore more efficient alternatives, such as leveraging frameworks or tools that enable shared data structures across threads—like SharedArrayBuffer and Atomics—or implementing message channels to minimize reliance on file-based operations.
 
+- State Update Mechanism
+The current state update mechanism relies on frontend requests, which is not considered best practice. In the future, I plan to implement an optimized mechanism to manage state updates more effectively.This would involve maintaining a variable that tracks the closest nextCall timestamp. When a request is received, the system would check whether the nextCall date in the request is earlier than the currently tracked closest timestamp. If so, the system would update the variable accordingly and schedule an event to update the state at the new nextCall time. Additionally, any previously pending events that are no longer relevant would be canceled to avoid unnecessary processing.
 
-#### Backend Requires:
-- Node.js
-- Docker
-- NPM packages: `express`, `dotenv`, `cors`
-
-#### Frontend Requires:
-- A modern JavaScript framework (e.g., React).
 
 ### Future Enhancements
 

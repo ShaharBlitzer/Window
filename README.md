@@ -64,12 +64,11 @@ backend/
 
 The frontend provides a user interface for interacting with the backend services. It allows users to:
 
-- Submit file hash checks.
 - View and manage endpoint data.
 
 ### Features
 
-- **Dynamic UI**: Modern, responsive design for managing endpoints.
+- **Dynamic UI**: design for managing endpoints.
 - **Integration with Backend**: Seamlessly communicates with the backend API to fetch and display data.
 - **Dockerized Deployment**: Ensures easy setup and consistent environment.
 
@@ -118,7 +117,7 @@ frontend/
 #### File Hash Check Request:
 - **UUID**: Unique identifier for the endpoint.
 - **File Hashes**: Array of file hashes to check against malicious hashes.
-- **Next Call**: Timestamp for the next scheduled check.
+- **Next Call**: Timestamp for the next scheduled check, which needs to be provided in UTC.
 
 #### Endpoint Data:
 - **UUID**: Unique identifier.

@@ -169,7 +169,7 @@ frontend/
 |------------|-----------|-----------------------------------------------|----------|
 | Phase #1   | Backend   | Endpoint object and basic methods            | Done     |
 | Phase #1   | Backend   | Data persistence                             | Done     |
-| Phase #1   | Backend   | Multitasking using a thread pool with locking mechanism | Done |
+| Phase #1   | Backend   | Multitasking using a threads with locking mechanism | Done |
 | Phase #2   | Backend   | Optimized state update mechanism             | Planned  |
 | Phase #2   | Backend   | Explore and implement efficient endpoint storage alternatives | Planned  |
 | Phase #2   | Frontend  | Improved UI design                           | Planned  |

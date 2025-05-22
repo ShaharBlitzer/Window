@@ -67,7 +67,7 @@ The frontend provides a user interface for interacting with the backend services
 
 ### Features
 
-- **Dynamic UI**: Modern, responsive design for managing endpoints.
+- **Dynamic UI**: responsive design for managing endpoints.
 - **Refresh Button**: A refresh button allows users to manually call the `/show-endpoints` endpoint on the backend and refresh the displayed endpoint data.
 - **Proactive Updates**: Every 20 minutes, the frontend automatically calls the `/show-endpoints` endpoint to ensure the displayed data is up-to-date.
 - **Integration with Backend**: Seamlessly communicates with the backend API to fetch and display data.
@@ -142,3 +142,5 @@ The current state update mechanism relies on frontend requests, which is not con
 - Add authentication and authorization.
 - Improve file storage scalability by migrating to a database.
 - Optimize locking mechanism for higher concurrency.
+- Implement a state update mechanism to efficiently handle `nextCall` events and reduce performance overhead.
+- Improve UI design for better usability and user experience.

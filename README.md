@@ -137,7 +137,9 @@ frontend/
 - State Update Mechanism
 The current state update mechanism relies on frontend requests, which is not considered best practice. In the future, I plan to implement an optimized mechanism to manage state updates more effectively.This would involve maintaining a variable that tracks the closest nextCall timestamp. When a request is received, the system would check whether the nextCall date in the request is earlier than the currently tracked closest timestamp. If so, the system would update the variable accordingly and schedule an event to update the state at the new nextCall time. Additionally, any previously pending events that are no longer relevant would be canceled to avoid unnecessary processing.
 
-
+### Testing
+- The project includes a `testApi.js` file for testing the `/api/check-files` endpoint. This script sends various requests to validate the API's functionality and logs the results.
+- 
 ### Future Enhancements
 
 - Add authentication and authorization.

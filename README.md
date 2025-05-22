@@ -19,15 +19,15 @@ The backend is implemented in Node.js and handles the business logic for:
 ### Features
 
 - **Endpoint Management**:
-  - Add, update, and retrieve endpoint data.
+  - Add, update, and retrieve all endpoints data.
   - Use a lock mechanism to ensure consistency when multiple requests access the shared data.
 
 - **File Hash Checking**:
   - Compare file hashes to a list of known malicious hashes and return results.
 
 - **REST API**:
-  - Endpoint for submitting file hash checks.
-  - Endpoint for retrieving all endpoints.
+  - `api/check-files`: Endpoint for submitting file hash checks.
+  - `/show-endpoints`: Endpoint for retrieving all endpoints. This endpoint is primarily used by the frontend to fetch and update endpoint data, including state changes.
 
 - **Dockerized Deployment**: Simplifies setup and ensures consistent environments.
 
